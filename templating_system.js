@@ -1,9 +1,13 @@
 
-var handlebars = require('handlebars'),
-fs = require('fs');
+console.log("<- Apertus Newsletter Template Renderer v0.01 ->");
+console.log("Rendering for "+process.argv[2]);
 
-var data = JSON.parse(fs.readFileSync('newsletter_data/20180406_000/data.json', 'utf8'));
-data.body = process.argv[2];
+var handlebars = require('handlebars'),
+    fs = require('fs'),
+    path = require('path');
+
+var date = process.argv[2];
+var data = JSON.parse(fs.readFileSync('newsletter_data/'+date+'/data.json', 'utf8'));
 
 fs.readFile('template.html', 'utf-8', function(error, source){
     handlebars.registerHelper('custom_title', function(title){
@@ -19,6 +23,15 @@ fs.readFile('template.html', 'utf-8', function(error, source){
 
     var template = handlebars.compile(source);
     var html = template(data);
-    fs.writeFile("render.html", html);
-    console.log(html)
+    var op = "rendered_output/"+date+"/newsletter.html";
+    function ensureDirectoryExistence(filePath) {
+        var dirname = path.dirname(filePath);
+        if (fs.existsSync(dirname)) {
+            return true;
+        }
+        ensureDirectoryExistence(dirname);
+        fs.mkdirSync(dirname);
+    }
+    ensureDirectoryExistence(op);
+    fs.writeFile(op, html, function(){});
 });
