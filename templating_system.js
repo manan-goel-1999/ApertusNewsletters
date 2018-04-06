@@ -1,11 +1,7 @@
 var handlebars = require('handlebars'),
   fs = require('fs');
 
-var data = {
-  title: 'practical node.js',
-  author: '@azat_co',
-  tags: ['express', 'node', 'javascript']
-}
+var data = JSON.parse(fs.readFileSync('newsletter_data/20180406_000/data.json', 'utf8'));
 data.body = process.argv[2];
 
 fs.readFile('template.html', 'utf-8', function(error, source){
