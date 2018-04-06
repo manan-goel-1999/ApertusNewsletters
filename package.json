@@ -1,0 +1,23 @@
+{
+  "name": "apertus-newsletter",
+  "version": "1.0.0",
+  "description": "MJML template for apertus° newsletter",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "apertus°",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-exec": "^3.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-mjml": "^2.3.0",
+    "gulp-webserver": "^0.9.1",
+    "handlebars": "^4.0.11",
+    "mjml": "^4.0.3",
+    "pump": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
