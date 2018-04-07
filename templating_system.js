@@ -8,8 +8,9 @@ var handlebars = require('handlebars'),
 
 var date = process.argv[2];
 var data = JSON.parse(fs.readFileSync('newsletter_data/'+date+'/data.json', 'utf8'));
+console.log(data);
 
-fs.readFile('template.html', 'utf-8', function(error, source){
+fs.readFile('newsletter.mjml', 'utf-8', function(error, source){
     handlebars.registerHelper('custom_title', function(title){
     var words = title.split(' ');
     for (var i = 0; i < words.length; i++) {
@@ -21,9 +22,9 @@ fs.readFile('template.html', 'utf-8', function(error, source){
     return title;
 })
 
-    var template = handlebars.compile(source);
+    var template = handlebars.compile(source, {noEscape:true});
     var html = template(data);
-    var op = "rendered_output/"+date+"/newsletter.html";
+    var op = "rendered_output/"+date+"/newsletter.mjml";
     function ensureDirectoryExistence(filePath) {
         var dirname = path.dirname(filePath);
         if (fs.existsSync(dirname)) {
