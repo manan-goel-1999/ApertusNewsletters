@@ -9,10 +9,36 @@
 	},
 	"fullwidth1": {
 		"heading": "Full width heading 1",
-		"text": "Good progress has been made since we listed eleven remaining tasks regarding the camera's road-map in the project's <a href=\"https://wiki.apertus.org/index.php/Mission_Briefings\">Wiki</a>. There have been some obstacles which have delayed things e.g. the holidays and some bouts of flu, but in general we're happy with what's been done over the past three months. The community is focusing on the final four points in the aforementioned list; Enclosure milling, WiFi stick evaluation, CE / FCC certification, and automated firmware builds."
+		"text": "Good progress has been made since we listed eleven remaining tasks regarding the camera's road-map in the project's <a href=\"https://wiki.apertus.org/index.php/Mission_Briefings\">Wiki</a>. There have been some obstacles which have delayed things e.g. the holidays and some bouts of flu, but in general we're happy with what's been done over the past three months. The community is focusing on the final four points in the aforementioned list; Enclosure milling, WiFi stick evaluation, CE / FCC certification, and automated firmware builds.",
+		"linkline": ""
 	},
 	"fullwidth2": {
 		"heading": "Full width heading 2",
-		"text": "2222222 Good progress has been made since we listed eleven remaining tasks regarding the camera's road-map in the project's <a href=\"https://wiki.apertus.org/index.php/Mission_Briefings\">Wiki</a>. There have been some obstacles which have delayed things e.g. the holidays and some bouts of flu, but in general we're happy with what's been done over the past three months. The community is focusing on the final four points in the aforementioned list; Enclosure milling, WiFi stick evaluation, CE / FCC certification, and automated firmware builds."
+		"text": "2222222 Good progress has been made since we listed eleven remaining tasks regarding the camera's road-map in the project's <a href=\"https://wiki.apertus.org/index.php/Mission_Briefings\">Wiki</a>. There have been some obstacles which have delayed things e.g. the holidays and some bouts of flu, but in general we're happy with what's been done over the past three months. The community is focusing on the final four points in the aforementioned list; Enclosure milling, WiFi stick evaluation, CE / FCC certification, and automated firmware builds.",
+		"linkline": "<a href=\"http://somewhere.com\">Link to somewhere</a>"
+	},
+	"halfwidth2": {
+		"heading": "Halfwidth 1 Heading",
+		"text": "This is just the text for halfwidth ",
+		"linkline": "<a href=\"http://somewhere.com\">Link to somewhere</a>"
+	},
+	"halfwidth2": {
+		"heading": "Halfwidth 2 Heading",
+		"text": "This is just the text for halfwidth 2",
+		"linkline": "<a href=\"http://somewhere.com\">Link to somewhere</a>"	
+	},
+	"bigimage2": {
+		"link": "bigimagelink.jpeg",
+		"caption": "Big Image caption goes here"
+	},
+	"fullwidthcont1": {
+		"heading": "fullwidthcont1 Heading",
+		"text": "This is just the text for fullwidth ",
+		"linkline": "<a href=\"http://somewhere.com\">Link to somewhere</a>"
+	},
+	"fullwidthcont2": {
+		"heading": "fullwidthcont2 Heading",
+		"text": "This is just the text for fullwidth ",
+		"linkline": "<a href=\"http://somewhere.com\">Link to somewhere</a>"
 	}
 }

@@ -8,7 +8,7 @@ var handlebars = require('handlebars'),
 
 var date = process.argv[2];
 var data = JSON.parse(fs.readFileSync('newsletter_data/'+date+'/data.json', 'utf8'));
-console.log(data);
+//console.log(data);
 
 fs.readFile('newsletter.mjml', 'utf-8', function(error, source){
     handlebars.registerHelper('custom_title', function(title){
