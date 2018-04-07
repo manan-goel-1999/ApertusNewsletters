@@ -8,31 +8,28 @@ var handlebars = require('handlebars'),
 
 var date = process.argv[2];
 var data = JSON.parse(fs.readFileSync('newsletter_data/'+date+'/data.json', 'utf8'));
-//console.log(data);
 
-fs.readFile('newsletter.mjml', 'utf-8', function(error, source){
-    handlebars.registerHelper('custom_title', function(title){
-    var words = title.split(' ');
-    for (var i = 0; i < words.length; i++) {
-        if (words[i].length > 4) {
-            words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-        }
+var templatecontent;
+fs.readFile('newsletter.mjml', 'utf-8', function read(err, data) {
+    if (err) {
+        throw err;
     }
-    title = words.join(' ');
-    return title;
-})
-
-    var template = handlebars.compile(source, {noEscape:true});
+    templatecontent = data;
+    renderTemplate();
+});
+function ensureDirectoryExistence(filePath) {
+    var dirname = path.dirname(filePath);
+    if (fs.existsSync(dirname)) {
+        return true;
+    }
+    ensureDirectoryExistence(dirname);
+    fs.mkdirSync(dirname);
+}
+function renderTemplate(){
+    var template = handlebars.compile(templatecontent, {noEscape:true});
     var html = template(data);
     var op = "rendered_output/"+date+"/newsletter.mjml";
-    function ensureDirectoryExistence(filePath) {
-        var dirname = path.dirname(filePath);
-        if (fs.existsSync(dirname)) {
-            return true;
-        }
-        ensureDirectoryExistence(dirname);
-        fs.mkdirSync(dirname);
-    }
+
     ensureDirectoryExistence(op);
     fs.writeFile(op, html, function(){});
-});
+}
