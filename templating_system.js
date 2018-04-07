@@ -28,7 +28,7 @@ function ensureDirectoryExistence(filePath) {
 function renderTemplate(){
     var template = handlebars.compile(templatecontent, {noEscape:true});
     var html = template(data);
-    var op = "rendered_output/"+date+"/newsletter.mjml";
+    var op = "rendered_mjml/"+date+"/newsletter.mjml";
 
     ensureDirectoryExistence(op);
     fs.writeFile(op, html, function(){});

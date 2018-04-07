@@ -1,1 +1,3 @@
 node_modules/*
+rendered_mjml/*
+rendered_output/*
