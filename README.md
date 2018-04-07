@@ -10,5 +10,3 @@ A simple templating system for aiding in creation of newsletters out of Apertus
 6. Render using command `node templating_system.js YYYYMMDD_NNN`
 7. Find the render in `rendered_output/YYYYMMDD_NNN`.
 
-
-... (system currently under dev, does not have MJML right now)
